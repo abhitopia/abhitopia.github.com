@@ -2,7 +2,11 @@
 site_name: "Abhitopia's Blog"
 site_description: "Abhitopia's Blog"
 site_author: 'Abhishek Aggarwal'
-site_url: 'https://www.abhitopia.com'
+site_url: 'https://abhitopia.com'
+
+nav:
+  - Home: index.md
+  - About: about.md
 
 # Repository
 #repo_name: 'squidfunk/mkdocs-material'
@@ -22,6 +26,8 @@ theme:
     text: 'Roboto'
     code: 'Roboto Mono'
 
+remote_branch: 'master'  # this will cause gh-deploy to push to master branch
+
 # Customization
 extra:
   social:
@@ -35,7 +41,7 @@ extra:
 
 # Google Analytics
 google_analytics:
-  - 'UA-XXXXXXXX-X'
+  - 'UA-126541129-1'
   - 'auto'
 
 # Extensions
