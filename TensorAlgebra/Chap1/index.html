@@ -1,0 +1,497 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Tensor motivation and defintion">
+      
+      
+        <link rel="canonical" href="https://abhitopia.com/TensorAlgebra/Chap1/">
+      
+      
+        <meta name="author" content="Abhishek Aggarwal">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Tensor Algebra: Chapter 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#chapter-1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://abhitopia.com" title="ABHITOPIA" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                ABHITOPIA
+              </span>
+              <span class="md-header-nav__topic">
+                Chapter 1
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+          
+
+
+<div class="md-hero" data-md-component="hero">
+  <div class="md-hero__inner md-grid">
+    Blog series on Tensor Algebra
+  </div>
+</div>
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Tensor Algrebra" class="md-tabs__link md-tabs__link--active">
+          Tensor Algrebra
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://abhitopia.com" title="ABHITOPIA" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    ABHITOPIA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Tensor Algrebra
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Tensor Algrebra
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Chapter 1
+      </label>
+    
+    <a href="./" title="Chapter 1" class="md-nav__link md-nav__link--active">
+      Chapter 1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisite" title="Pre-requisite" class="md-nav__link">
+    Pre-requisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-would-you-want-to-study-tensor-algebra" title="Why would you want to study Tensor Algebra?" class="md-nav__link">
+    Why would you want to study Tensor Algebra?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-tensors" title="What are Tensors?" class="md-nav__link">
+    What are Tensors?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisite" title="Pre-requisite" class="md-nav__link">
+    Pre-requisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-would-you-want-to-study-tensor-algebra" title="Why would you want to study Tensor Algebra?" class="md-nav__link">
+    Why would you want to study Tensor Algebra?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-tensors" title="What are Tensors?" class="md-nav__link">
+    What are Tensors?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="chapter-1"><strong>Chapter 1</strong><a class="headerlink" href="#chapter-1" title="Permanent link">&para;</a></h1>
+<p>Welcome to this blog series on Tensor Algebra. This blog series is my attempt to explain Tensor Algebra as I learnt from various sources over the Internet. This chapter is mostly to motivate why you might want to study Tensor Algebra.</p>
+<h2 id="pre-requisite">Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permanent link">&para;</a></h2>
+<p>This blog series assumes a familiarity with Linear Algebra (concepts like matrix-multiplication, dot products, linear combination, etc.) This blog should be particularly helpful for those who never had formal college degree in Physics and as such find it hard to delve into certain subjects where Tensors are pre-requisite. No knowledge of calculus is needed to study Tensor Algebra. I may do a follow up series on Tensor Calculus though.</p>
+<h2 id="why-would-you-want-to-study-tensor-algebra">Why would you want to study Tensor Algebra?<a class="headerlink" href="#why-would-you-want-to-study-tensor-algebra" title="Permanent link">&para;</a></h2>
+<p>Most people first hear about Tensor Algebra when they start out their journey to delve deeper into the <em>General Theory of Relatively (GTR)</em>. In GTR, Eistein shows how space-time forms a single object which is curved by massive objects ( and other crazy ideas like blackholes and gravitational waves).</p>
+<figure><img alt="_Space time curves near massive objects as predicted by General Theory of Relativity, but what does that even mean?_" src="../imgs/Spacetime_lattice_analogy.svg" /><figcaption><em>Space time curves near massive objects as predicted by General Theory of Relativity, but what does that even mean?</em></figcaption>
+</figure>
+<p>You might have also heard of big bang and how universe is expanding since. Tensors are an indispensable tool to understand what these mean mathematically.</p>
+<figure><img alt="_What does it really mean mathematically when people say Universe is expanding?_" src="../imgs/expanding_universe.jpg" /><figcaption><em>What does it really mean mathematically when people say Universe is expanding?</em></figcaption>
+</figure>
+<p>Another popular example where tensors come up often is <em>Quantum Mechanics(QM)</em> and <em>Quantum Computing(QC)</em>, In QM, the mystical concept of Quantum Superposition where in a particles can remain in multiple states until it is observed is essential <em>linear combination</em> of tensors which we will be cover later.</p>
+<figure><img alt="_Quantum Superposition: Is the cat dead or alive?_" src="../imgs/cat_dead_alive.jpg" /> <figcaption><em>Quantum Superposition: Is the cat dead or alive?</em></figcaption>
+</figure>
+<p>You may have heard that nothing travels faster than speed of light, yet if you separate two particles whose states are entangled, simple act of observing one instantaneously affects the other. Again, this is mathematically represented by <em>tensor product</em> which we will cover as well later in this series.</p>
+<figure><img alt="_&quot;Spooky action at a distance&quot;- Einstein. Huh?_" src="../imgs/quantum_entanglement.jpeg#right" /><figcaption><em>"Spooky action at a distance"- Einstein. Huh?</em></figcaption>
+</figure>
+<p>There is probably nothing more intriguing and fascinating than the unintuitive world of small scale (QM) as well as mind warping idea that time isn't same for everyone or that our universe is expanding. Tensors is a beautiful theory that allows one to study the underlying (complicated) Geometry of Space-time, something that one cannot get just by watching popular science articles or documentaries on these topics.</p>
+<div class="admonition quote">
+<p class="admonition-title">Alfred North Whitehead said</p>
+<p>The idea that physicists would in future have to study the theory of tensors created real panic amongst them following the first announcement that Eistein's predictions had been verified.  </p>
+</div>
+<p>However, GTR and QM are not the only subjects tensors are used in. Tensors are prevalent in many domains of engineering and science, and good understanding of tensors would build a solid foundation for learning numerous other STEM subjects.</p>
+<h2 id="what-are-tensors">What are Tensors?<a class="headerlink" href="#what-are-tensors" title="Permanent link">&para;</a></h2>
+<p>It is hard to explain what Tensor is. Different people tend to give different definition of tensor. And whats worse is that most of them are partially correct, but none completely. There are generally three ways to think about Tensor.</p>
+<ol>
+<li>
+<p><strong>Tensors are multi-dimensional arrays.</strong> 
+An array is a list of numbers. If you replicate that list multiple times, like a table or MS excel, than it is called a 2-D array and so on and so forth. For example, you may have heard of popular scientific computation library called <em>TensorFlow</em>, which is all about manipulation of multi-dimensional arrays. Tensors are characterised by rank, as follows:</p>
+<ul>
+<li>Scalar (rank 0 tensor): <span><span class="MathJax_Preview">[5], [1], [2.5], [\pi]</span><script type="math/tex">[5], [1], [2.5], [\pi]</script></span></li>
+<li>Vector (rank 1 tensor): <span><span class="MathJax_Preview">[1, 2, 3]</span><script type="math/tex">[1, 2, 3]</script></span>, <span><span class="MathJax_Preview">[0.1, 3, \sqrt{2}]</span><script type="math/tex">[0.1, 3, \sqrt{2}]</script></span></li>
+<li>Matrix (rank 2 tensor): <span><span class="MathJax_Preview">\begin{bmatrix}a &amp; b\\c &amp; d\end{bmatrix}</span><script type="math/tex">\begin{bmatrix}a & b\\c & d\end{bmatrix}</script></span>, <span><span class="MathJax_Preview">\begin{bmatrix}1 &amp; 2 &amp; 3\\4 &amp; 5 &amp; 6\end{bmatrix}</span><script type="math/tex">\begin{bmatrix}1 & 2 & 3\\4 & 5 & 6\end{bmatrix}</script></span></li>
+<li>So on for rank 3, 4, ...</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">This definition is incorrect</p>
+<p>Because Tensors can be represented as multi-dimensional arrays. However, tensors as concept is much more than just bunch of numbers. While calling multidimensional arrays tensor is generally accepted in Machine Learning community, it is not strictly correct. Tensors have geometrical meaning which is not apparent in this definition.</p>
+</div>
+</li>
+</ol>
+<p>To be continued...    </p>
+                
+                  
+                
+              
+              
+                
+
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://abhitopia.com/TensorAlgebra/Chap1/";
+      this.page.identifier =
+        "/TensorAlgebra/Chap1/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//abhitopia-1.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Abhishek Aggarwal
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/abhitopia" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/abhitopia" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/abhitopia" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-126541129-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
