@@ -1,8 +1,7 @@
-# Welcome to MkDocs
+# Welcome to my blog
+This is my blog where I write about Maths, Science and Machine Learning.
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
-
-## Commands
+## Commands 🕴
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.

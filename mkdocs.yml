@@ -1,12 +1,12 @@
 # Project information
-site_name: "Abhitopia's Blog"
-site_description: "Abhitopia's Blog"
+site_name: "ABHITOPIA"
+site_description: "Blog on Maths, Science and Machine Learning"
 site_author: 'Abhishek Aggarwal'
 site_url: 'https://abhitopia.com'
 
 nav:
-  - Home: index.md
-  - About: about.md
+  - Tensor Algrebra:
+    - Chapter 1: TensorAlgebra/Chap1.md
 
 # Repository
 #repo_name: 'squidfunk/mkdocs-material'
@@ -23,10 +23,17 @@ theme:
     primary: 'teal'
     accent: 'teal'
   font:
-    text: 'Roboto'
+    text: 'Ubuntu'
     code: 'Roboto Mono'
+  feature:
+    tabs: true
 
 remote_branch: 'master'  # this will cause gh-deploy to push to master branch
+
+extra_css: [extra.css]
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
 # Customization
 extra:
@@ -54,6 +61,7 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.arithmatex
+  - pymdownx.b64
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
@@ -69,3 +77,4 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - figureAltCaption
