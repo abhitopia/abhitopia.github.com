@@ -1,8 +1,7 @@
 Title: Misc topics and papers
 description: 
 hero: Topics and papers I find interesting in Machine Learning
-authors:
-    - Abhishek Aggarwal
+author: Abhishek Aggarwal
 date: 2019-03-03
 
 
@@ -13,8 +12,10 @@ date: 2019-03-03
 This paper propose by Jimmy Ba and Hinton, proposes an old idea of using Hebbian like learning rule on 2nd order TPR representations to augment traditional RNN to incoorporate temporary, short-term memory.
  
  - [Paper](https://arxiv.org/abs/1610.06258)
+ - [Fast weight memories](https://pdfs.semanticscholar.org/f862/0fb17d7e0e41c44c1e87fe3693daad0d30bd.pdf)
  - [Video](https://www.youtube.com/watch?v=Hd20zGKAdoI) by Jimmy
  - [Video](https://www.youtube.com/watch?v=GLmptInTNSw) by Hinton
+
 #### My two cents
 - Can this be combined with Neural Ordinary Differential equation to determine automatically determine the length of inner loop?
 - Can decay parameter be learning, than have constant exponentail rate decay?

@@ -19,6 +19,7 @@ copyright: 'Copyright &copy; 2018 Abhishek Aggarwal'
 # Configuration
 theme:
   name: 'material'
+  custom_dir: 'theme'
   language: 'en'
   palette:
     primary: 'teal'
@@ -51,6 +52,11 @@ extra:
 google_analytics:
   - 'UA-126541129-1'
   - 'auto'
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date
 
 # Extensions
 markdown_extensions:

@@ -1,4 +1,4 @@
-Title: Foreword
+Title: 
 description: Tensor motivation and defintion
 hero: So what is this blog all about?
 authors:
