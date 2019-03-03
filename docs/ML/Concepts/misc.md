@@ -6,16 +6,28 @@ authors:
 date: 2019-03-03
 
 
+### RNN training methods and corresponding computational complexity
+- [Paper](https://web.stanford.edu/class/psych209a/ReadingsByDate/02_25/Williams%20Zipser95RecNets.pdf)
+
 ### Short term memory for RNNs
 This paper propose by Jimmy Ba and Hinton, proposes an old idea of using Hebbian like learning rule on 2nd order TPR representations to augment traditional RNN to incoorporate temporary, short-term memory.
  
  - [Paper](https://arxiv.org/abs/1610.06258)
  - [Video](https://www.youtube.com/watch?v=Hd20zGKAdoI) by Jimmy
  - [Video](https://www.youtube.com/watch?v=GLmptInTNSw) by Hinton
-
+#### My two cents
+- Can this be combined with Neural Ordinary Differential equation to determine automatically determine the length of inner loop?
+- Can decay parameter be learning, than have constant exponentail rate decay?
+- It will be interesting to see how large scape Ulmfit like language model trained using truncated BPTT will do. If it works, it should be faster (and real time) during inference compared to attentional variants including Transformer XL.
 
 ### Symbolic Neural Reasoning using TPR
+This follows on Paul Smolensky work on symbolic reasoning using TPR and gives an end-to-end learning framework using Fast-Weights update of third order TPRs. Very interesting paper, which scope to build upon further.
+
 - [Paper](https://papers.nips.cc/paper/8203-learning-to-reason-with-third-order-tensor-products.pdf)
+
+#### My two cents
+- Authors haven't been able to integrate it to a full fledged LSTM (or unable to make it work). The idea is novel and needs further investigation.
+
 
 ### Graph Neural Networks
 - [Paper](https://arxiv.org/pdf/1806.01261.pdf)
@@ -28,3 +40,6 @@ This paper propose by Jimmy Ba and Hinton, proposes an old idea of using Hebbian
 - [FOL Theorem Proving Dataset](https://archive.ics.uci.edu/ml/datasets/First-order+theorem+proving)
 - [HolStep Dataset](https://arxiv.org/abs/1703.00426)
 - [DeepMath - Deep Sequence Models for Premise Selection](https://arxiv.org/pdf/1606.04442)
+
+#### My two cents
+- Theorem proving and theorem validation is epitomy of symbolic reasoning. It would be interesting to see how the Fast-weights and TPR variants above do on these tasks.
