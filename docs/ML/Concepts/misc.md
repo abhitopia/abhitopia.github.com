@@ -16,3 +16,15 @@ This paper propose by Jimmy Ba and Hinton, proposes an old idea of using Hebbian
 
 ### Symbolic Neural Reasoning using TPR
 - [Paper](https://papers.nips.cc/paper/8203-learning-to-reason-with-third-order-tensor-products.pdf)
+
+### Graph Neural Networks
+- [Paper](https://arxiv.org/pdf/1806.01261.pdf)
+- [Paper](https://arxiv.org/pdf/1810.00826v1.pdf)
+- [Blog](https://medium.com/intuitionmachine/intuitive-relational-reasoning-for-deep-learning-3ae164f9f5cd)
+
+### Neural and Symbolic Reasoning
+- [Workshop](http://neural-symbolic.org/)
+- [Course](http://tiarkrompf.github.io/cs590/2018/)
+- [FOL Theorem Proving Dataset](https://archive.ics.uci.edu/ml/datasets/First-order+theorem+proving)
+- [HolStep Dataset](https://arxiv.org/abs/1703.00426)
+- [DeepMath - Deep Sequence Models for Premise Selection](https://arxiv.org/pdf/1606.04442)
