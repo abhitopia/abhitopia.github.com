@@ -1,6 +1,6 @@
-Title: Tensor Algebra: Chapter 1
+Title: Chapter 1
 description: Tensor motivation and defintion
-hero: Blog series on Tensor Algebra
+hero: Series on Tensor Algebra
 authors:
     - Abhishek Aggarwal
 date: 2018-10-14
@@ -39,7 +39,7 @@ However, GTR and QM are not the only subjects tensors are used in. Tensors are p
 ## What are Tensors?
 It is hard to explain what Tensor is. Different people tend to give different definition of tensor. And whats worse is that most of them are partially correct, but none completely. There are generally three ways to think about Tensor.
 
-1. **Tensors are multi-dimensional arrays.** 
+1. **Tensors are ^^multi-dimensional arrays.^^** 
 An array is a list of numbers. If you replicate that list multiple times, like a table or MS excel, than it is called a 2-D array and so on and so forth. For example, you may have heard of popular scientific computation library called _TensorFlow_, which is all about manipulation of multi-dimensional arrays. Tensors are characterised by rank, as follows:
 
     * Scalar (rank 0 tensor): $[5], [1], [2.5], [\pi]$
@@ -48,6 +48,7 @@ An array is a list of numbers. If you replicate that list multiple times, like a
     * So on for rank 3, 4, ...
         
     !!! failure "This definition is incorrect"
-        Because Tensors can be represented as multi-dimensional arrays. However, tensors as concept is much more than just bunch of numbers. While calling multidimensional arrays tensor is generally accepted in Machine Learning community, it is not strictly correct. Tensors have geometrical meaning which is not apparent in this definition.
+        Because while, ^^Tensors can be represented as multi-dimensional arrays^^, tensors as concept are much more than just bunch of numbers. While calling multidimensional arrays tensor is generally accepted in Machine Learning community, it is not strictly correct. Tensors have geometrical meaning which is not apparent in this definition.
 
-To be continued...    
+2. **Tensor is an object that is ^^invariant^^ under a ^^change of coordinates^^**.
+Under this definition, Tensors as object do not change when viewed from different coordinate system. As the choice of coordinate system changes (say Castersian to Polar), the representation of the same tensor in terms of the coordinate **does** change, however. The change is predictible allowing us to go back and forth from one coordinate system to another using known transformation rules.

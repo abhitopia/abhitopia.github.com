@@ -1,13 +1,14 @@
 # Project information
-site_name: "ABHITOPIA"
-site_description: "Blog on Maths, Science and Machine Learning"
+site_name: " "
+site_description: "Blog on Maths, Science, Machine Learning and everything else I read in the space."
 site_author: 'Abhishek Aggarwal'
 site_url: 'https://abhitopia.com'
 
 nav:
+  - Machine Learning:
+    - ML/Concepts/misc.md
   - Tensor Algrebra:
-    - Chapter 1: TensorAlgebra/Chap1.md
-
+    - TensorAlgebra/Chap1.md
 # Repository
 #repo_name: 'squidfunk/mkdocs-material'
 #repo_url: 'https://github.com/squidfunk/mkdocs-material'
