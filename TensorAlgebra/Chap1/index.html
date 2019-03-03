@@ -42,7 +42,7 @@
     
     
       
-        <title>Tensor Algebra: Chapter 1</title>
+        <title>Chapter 1</title>
       
     
     
@@ -96,7 +96,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://abhitopia.com" title="ABHITOPIA" class="md-header-nav__button md-logo">
+        <a href="https://abhitopia.com" title=" " class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -110,7 +110,7 @@
           
             
               <span class="md-header-nav__topic">
-                ABHITOPIA
+                 
               </span>
               <span class="md-header-nav__topic">
                 Chapter 1
@@ -162,7 +162,7 @@
 
 <div class="md-hero" data-md-component="hero">
   <div class="md-hero__inner md-grid">
-    Blog series on Tensor Algebra
+    Series on Tensor Algebra
   </div>
 </div>
         
@@ -175,6 +175,19 @@
 <nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../ML/Concepts/misc/" title="Machine Learning" class="md-tabs__link">
+          Machine Learning
+        </a>
+      
+    </li>
+  
+
       
         
   
@@ -202,15 +215,51 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://abhitopia.com" title="ABHITOPIA" class="md-nav__button md-logo">
+    <a href="https://abhitopia.com" title=" " class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    ABHITOPIA
+     
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Machine Learning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Machine Learning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ML/Concepts/misc/" title="Misc topics and papers" class="md-nav__link">
+      Misc topics and papers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
     
       
       
@@ -221,13 +270,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
-    <label class="md-nav__link" for="nav-1">
+    <label class="md-nav__link" for="nav-2">
       Tensor Algrebra
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-1">
+      <label class="md-nav__title" for="nav-2">
         Tensor Algrebra
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -399,7 +448,7 @@
 <p>It is hard to explain what Tensor is. Different people tend to give different definition of tensor. And whats worse is that most of them are partially correct, but none completely. There are generally three ways to think about Tensor.</p>
 <ol>
 <li>
-<p><strong>Tensors are multi-dimensional arrays.</strong> 
+<p><strong>Tensors are <ins>multi-dimensional arrays.</ins></strong> 
 An array is a list of numbers. If you replicate that list multiple times, like a table or MS excel, than it is called a 2-D array and so on and so forth. For example, you may have heard of popular scientific computation library called <em>TensorFlow</em>, which is all about manipulation of multi-dimensional arrays. Tensors are characterised by rank, as follows:</p>
 <ul>
 <li>Scalar (rank 0 tensor): <span><span class="MathJax_Preview">[5], [1], [2.5], [\pi]</span><script type="math/tex">[5], [1], [2.5], [\pi]</script></span></li>
@@ -409,11 +458,14 @@ An array is a list of numbers. If you replicate that list multiple times, like a
 </ul>
 <div class="admonition failure">
 <p class="admonition-title">This definition is incorrect</p>
-<p>Because Tensors can be represented as multi-dimensional arrays. However, tensors as concept is much more than just bunch of numbers. While calling multidimensional arrays tensor is generally accepted in Machine Learning community, it is not strictly correct. Tensors have geometrical meaning which is not apparent in this definition.</p>
+<p>Because while, <ins>Tensors can be represented as multi-dimensional arrays</ins>, tensors as concept are much more than just bunch of numbers. While calling multidimensional arrays tensor is generally accepted in Machine Learning community, it is not strictly correct. Tensors have geometrical meaning which is not apparent in this definition.</p>
 </div>
 </li>
+<li>
+<p><strong>Tensor is an object that is <ins>invariant</ins> under a <ins>change of coordinates</ins></strong>.
+Under this definition, Tensors as object do not change when viewed from different coordinate system. As the choice of coordinate system changes (say Castersian to Polar), the representation of the same tensor in terms of the coordinate <strong>does</strong> change, however. The change is predictible allowing us to go back and forth from one coordinate system to another using known transformation rules.</p>
+</li>
 </ol>
-<p>To be continued...    </p>
                 
                   
                 
@@ -446,6 +498,27 @@ An array is a list of numbers. If you replicate that list multiple times, like a
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../ML/Concepts/misc/" title="Misc topics and papers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Misc topics and papers
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
