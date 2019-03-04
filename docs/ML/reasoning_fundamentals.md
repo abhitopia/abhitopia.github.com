@@ -40,6 +40,8 @@ R(A, B) -> {true| false}
 R(A) -> B
 R^(B) -> A
 
+Also, given A, B -> one should be able to find the relation (important for interpretability)
+
 Note: this does not mean that R^ must exist as a primitive relation.
 
 A reasoning system must be able to construct all entities from the primitive entities using convex combination.
@@ -50,6 +52,8 @@ Imagine a spiders web. If primitive entities are represented at the outer edges 
 |E| -> |R| 
 
 number of possible arguments can then be |R|^(number of steps of reasoning). ( Connection with group theory?? )
+
+One can argue that given the amount of relations and entities, any argument can be made with reason.
 
 Reasoning is then an optimization process to find the **shortest** relation between two (new or primitive) entities. 
 
