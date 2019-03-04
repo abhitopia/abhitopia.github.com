@@ -4,6 +4,18 @@ hero: Topics and papers I find interesting in Machine Learning
 author: Abhishek Aggarwal
 date: 2019-03-03
 
+### NLP benchmark
+- [NLP Progress website](http://nlpprogress.com/english/language_modeling.html)
+
+### Tranformer XL
+- [Code and pretrained model](https://github.com/kimiyoung/transformer-xl/tree/master/pytorch)
+- [Paper](https://arxiv.org/pdf/1901.02860.pdf)
+
+### AWD-LSTMS
+This is a great blog on the underlying concept and should help implement the same in trudle. It would be also 
+good to see how awd-lstm compare with attentive awd-lstms. 
+
+- [Blog](https://yashuseth.blog/2018/09/12/awd-lstm-explanation-understanding-language-model/)
 
 ### RNN training methods and corresponding computational complexity
 - [Paper](https://web.stanford.edu/class/psych209a/ReadingsByDate/02_25/Williams%20Zipser95RecNets.pdf)
