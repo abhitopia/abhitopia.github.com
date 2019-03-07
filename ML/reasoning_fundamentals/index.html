@@ -239,9 +239,45 @@
 
 
   <li class="md-nav__item">
-    <a href="../Concepts/misc/" title="Misc topics and papers" class="md-nav__link">
-      Misc topics and papers
+    <a href="../Concepts/misc/" title="Paper Collection" class="md-nav__link">
+      Paper Collection
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
+    
+    <label class="md-nav__link" for="nav-1-2">
+      Paper Summaries
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        Paper Summaries
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PaperSummaries/symbolic_dl/" title="Reconciling deep learning with symbolic artificial intelligence" class="md-nav__link">
+      Reconciling deep learning with symbolic artificial intelligence
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -367,7 +403,7 @@
             -->
 
             
-            <p align="right"><small><br><i>Updated 2019-03-04</i></small></p>
+            <p align="right"><small><br><i>Updated 2019-03-07</i></small></p>
             
 
             
@@ -402,12 +438,14 @@
 <p>R(A, B) -&gt; {true| false}
 R(A) -&gt; B
 R^(B) -&gt; A</p>
+<p>Also, given A, B -&gt; one should be able to find the relation (important for interpretability)</p>
 <p>Note: this does not mean that R^ must exist as a primitive relation.</p>
 <p>A reasoning system must be able to construct all entities from the primitive entities using convex combination.</p>
 <p>Imagine a spiders web. If primitive entities are represented at the outer edges of the web, then all the space of new (non-primitive) entities can be created as a linear combination of primitive entities.</p>
 <h1 id="implementation-ideas">Implementation ideas<a class="headerlink" href="#implementation-ideas" title="Permanent link">&para;</a></h1>
 <p>|E| -&gt; |R| </p>
 <p>number of possible arguments can then be |R|^(number of steps of reasoning). ( Connection with group theory?? )</p>
+<p>One can argue that given the amount of relations and entities, any argument can be made with reason.</p>
 <p>Reasoning is then an optimization process to find the <strong>shortest</strong> relation between two (new or primitive) entities. </p>
 <p>This idea can also be used to determine when to stop reasoning.</p>
 <h2 id="role-of-context-temporal-information-and-symbols">Role of context (temporal information, and symbols)<a class="headerlink" href="#role-of-context-temporal-information-and-symbols" title="Permanent link">&para;</a></h2>
@@ -456,6 +494,7 @@ R^(B) -&gt; A</p>
 <ul>
 <li>relative position for text (transformer-xl)</li>
 </ul>
+<p>TPR can be a good choice for representing entities and relations</p>
 
             <!-- Source files -->
             
