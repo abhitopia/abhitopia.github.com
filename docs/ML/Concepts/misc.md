@@ -56,3 +56,21 @@ This follows on Paul Smolensky work on symbolic reasoning using TPR and gives an
 
 #### My two cents
 - Theorem proving and theorem validation is epitomy of symbolic reasoning. It would be interesting to see how the Fast-weights and TPR variants above do on these tasks.
+
+
+### Logic Tensor Network
+The paper doesn't as good of a justice to the theory they develop in the tutorial. They lay the foundation of first order (fuzzy) logic in tensors. The tutorial is also a good introduction to fuzzy logic.
+
+- [Tutorial, Code, Notebooks](https://sites.google.com/fbk.eu/ltn/tutorial-ijcai-2018)
+
+
+
+### Model confidence recalibration
+I stumbled upon [this blog](http://alondaks.com/2017/12/31/the-importance-of-calibrating-your-deep-model/) post when I noticed that after training my model for longer (and consequently obtaining higher accuracy), the confidence thresholding didn't work as well. This also hijacked the highly confident beams during beam search. 
+The post is baed on a nicely written article, link below.
+
+- [Paper](https://arxiv.org/abs/1706.04599)
+- [Pytorch Code](https://github.com/gpleiss/temperature_scaling)
+
+## My two cents
+- This has not been tried in NLP settings. I am in process of implementing it now as part of my work at True AI. I shall post the results after.

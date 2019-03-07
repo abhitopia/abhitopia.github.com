@@ -6,7 +6,9 @@ site_url: 'https://abhitopia.com'
 
 nav:
   - Machine Learning:
-    - ML/Concepts/misc.md
+    - Paper Collection: ML/Concepts/misc.md
+    - Paper Summaries:
+      - Reconciling deep learning with symbolic artificial intelligence: ML/PaperSummaries/symbolic_dl.md
   - Tensor Algrebra:
     - TensorAlgebra/Chap1.md
 # Repository

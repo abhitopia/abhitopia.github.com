@@ -107,3 +107,5 @@ It is the job of mapping function to map symbols to these variables.
 - relative position for text (transformer-xl)
 
 
+TPR can be a good choice for representing entities and relations
+
