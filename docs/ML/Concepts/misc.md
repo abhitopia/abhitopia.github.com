@@ -72,5 +72,5 @@ The post is baed on a nicely written article, link below.
 - [Paper](https://arxiv.org/abs/1706.04599)
 - [Pytorch Code](https://github.com/gpleiss/temperature_scaling)
 
-## My two cents
+#### My two cents
 - This has not been tried in NLP settings. I am in process of implementing it now as part of my work at True AI. I shall post the results after.
