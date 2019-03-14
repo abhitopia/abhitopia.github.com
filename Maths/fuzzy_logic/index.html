@@ -1,0 +1,801 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A short tutorial on fuzzy first order logic (FFOL)">
+      
+      
+        <link rel="canonical" href="https://abhitopia.com/Maths/fuzzy_logic/">
+      
+      
+        <meta name="author" content="Abhishek Aggarwal">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>Fuzzy First Order Logic</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-126541129-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#crisp-and-fuzzy-sets" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://abhitopia.com" title=" " class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+               
+            </span>
+            <span class="md-header-nav__topic">
+              Fuzzy First Order Logic
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+          
+
+
+<div class="md-hero" data-md-component="hero">
+  <div class="md-hero__inner md-grid">
+    Short tutorial on Fuzzy First Order Logic
+  </div>
+</div>
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../ML/Concepts/misc/" title="Machine Learning" class="md-tabs__link">
+          Machine Learning
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Mathamatics" class="md-tabs__link md-tabs__link--active">
+          Mathamatics
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://abhitopia.com" title=" " class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+     
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Machine Learning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Machine Learning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ML/Concepts/misc/" title="Paper Collection" class="md-nav__link">
+      Paper Collection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
+    
+    <label class="md-nav__link" for="nav-1-2">
+      Paper Summaries
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        Paper Summaries
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ML/PaperSummaries/symbolic_dl/" title="Reconciling deep learning with symbolic artificial intelligence" class="md-nav__link">
+      Reconciling deep learning with symbolic artificial intelligence
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Mathamatics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Mathamatics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Fuzzy First Order Logic
+      </label>
+    
+    <a href="./" title="Fuzzy First Order Logic" class="md-nav__link md-nav__link--active">
+      Fuzzy First Order Logic
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#crisp-and-fuzzy-sets" title="Crisp and Fuzzy Sets" class="md-nav__link">
+    Crisp and Fuzzy Sets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operations-between-crisp-sets" title="Operations between crisp sets" class="md-nav__link">
+    Operations between crisp sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations-between-fuzzy-sets" title="Operations between fuzzy sets" class="md-nav__link">
+    Operations between fuzzy sets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Tensor Algrebra
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Tensor Algrebra
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../TensorAlgebra/Chap1/" title="Chapter 1" class="md-nav__link">
+      Chapter 1
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#crisp-and-fuzzy-sets" title="Crisp and Fuzzy Sets" class="md-nav__link">
+    Crisp and Fuzzy Sets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operations-between-crisp-sets" title="Operations between crisp sets" class="md-nav__link">
+    Operations between crisp sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations-between-fuzzy-sets" title="Operations between fuzzy sets" class="md-nav__link">
+    Operations between fuzzy sets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+            <!-- Edit button, if URL was defined -->
+            
+
+            <!--
+              Hack: check whether the content contains a h1 headline. If it
+              doesn't, the page title (or respectively site name) is used
+
+              as the main headline.
+            -->
+
+            
+            <p align="right"><small><br><i>Updated 2019-03-14</i></small></p>
+            
+
+            
+              <h1>Fuzzy First Order Logic</h1>
+            
+
+
+            <!-- 
+            <p style="position:left;font-size:14px;"> Last Updated: 2019-03-14 </p>
+                 -->
+
+            <!-- Content -->
+            <blockquote>
+<p>Logic (from the Greek "logos", which has a variety of meanings including word, thought, idea, argument, account,
+    reason or principle) is the study of reasoning, or the study of the principles and criteria of valid inference and
+    demonstration. It attempts to distinguish good reasoning from bad reasoning.</p>
+</blockquote>
+<p>Conventional Logic typically deals with binary truth values {True/False}. However, real world (and human feelings for
+certain) seldom works in binary. As humans, we constantly make choices on vague or imprecise judgements. For example, one
+may not know for sure if it is going to rain (unless of course you are living in London, when not a day goes by without
+raining) and yet she may decide to carry an umbrella, there by making binary decision based on non-binary reasoning.</p>
+<p>For computers to be able to reason in real world and to solve real world problems, they must be equipped to 
+make sense of such fuzzy data which is neither completely true, nor completely false. That is where Fuzzy Logic comes 
+to the rescue. </p>
+<p>It is a branch of <em>many-valued symbolic logic</em> which has comparative notion of truth, syntax, semantics, axiomatization, truth-preserving,
+completeness, etc. Broadly speaking, Fuzzy logic serves mainly as apparatus for fuzzy control, analysis of vagueness in
+natural language and several other application domains. It is one of the techniques of soft-computing, i.e. computational methods tolerant to
+suboptimality and impreciseness (vagueness) and giving quick, simple and sufficiently good solutions.</p>
+<p>In this blog post, I will summarise Fuzzy logic and more importantly Fuzzy First Order Logic (FFOL). This post is not
+intended to be a rigorous mathematical treatment of the subject but rather a cheat-sheet that can be consulted to 
+revise and reference important concepts.</p>
+<h2 id="crisp-and-fuzzy-sets">Crisp and Fuzzy Sets<a class="headerlink" href="#crisp-and-fuzzy-sets" title="Permanent link">&para;</a></h2>
+<p>In classical mathematics, one deals with collection of objects called <em>sets</em>. It is usually convenient to fix some 
+universe <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> in which every set is assumed to be included<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>.
+Then a set <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> can be thought of as a function on <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> which takes a values of <span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> for objects that belong to <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>, <span><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> otherwise.
+Such a function is called the <em>characteristic function of <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>,  <span><span class="MathJax_Preview">\chi_A(.)</span><script type="math/tex">\chi_A(.)</script></span></em>: </p>
+<div>
+<div class="MathJax_Preview">
+\chi_A(x) := \begin{cases} 
+                1 &amp; x\in A \\
+                0 &amp; x \notin A 
+            \end{cases}
+</div>
+<script type="math/tex; mode=display">
+\chi_A(x) := \begin{cases} 
+                1 & x\in A \\
+                0 & x \notin A 
+            \end{cases}
+</script>
+</div>
+<p>Obviously, this implies that there exist a <em>bijective mapping</em> between characteristic function and maps. In fact, this is how
+sets are defined in ZFC Set Theory.</p>
+<details class="example" open="open"><summary>Crisp Set</summary><p>Let <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> be the set of all real numbers between 0 and 10 and let <span><span class="MathJax_Preview">A = [5, 9]</span><script type="math/tex">A = [5, 9]</script></span>
+be the subset of <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> of real numbers between 5 and 9. This results in the
+following figure:</p><figure><img alt="" src="../crisp_set.png" /><figcaption></figcaption></figure></details><p>Fuzzy sets generalise this definition, allowing elements to belong to a
+given set with a certain degree. Instead of considering characteristic functions with value in <span><span class="MathJax_Preview">{0, 1}</span><script type="math/tex">{0, 1}</script></span>, we
+consider now functions valued in the interval <span><span class="MathJax_Preview">[0, 1]</span><script type="math/tex">[0, 1]</script></span>. A fuzzy subset <span><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> of a set <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> is a function <span><span class="MathJax_Preview">\mu_F(·)</span><script type="math/tex">\mu_F(·)</script></span>
+assigning to every element <span><span class="MathJax_Preview">x \in U</span><script type="math/tex">x \in U</script></span> the degree of membership of <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> to <span><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>:</p>
+<div>
+<div class="MathJax_Preview">
+\mu_F : U \rightarrow [0, 1]
+</div>
+<script type="math/tex; mode=display">
+\mu_F : U \rightarrow [0, 1]
+</script>
+</div>
+<details class="example" open="open"><summary>Fuzzy Set</summary><p>Let, as above, U be the set of real numbers between 1 and 10. A description of the fuzzy set of real numbers
+<em>close to 7</em> could be given by the following figure:
+<img alt="" src="../fuzzy_set.png" /></p></details><h3 id="operations-between-crisp-sets">Operations between crisp sets<a class="headerlink" href="#operations-between-crisp-sets" title="Permanent link">&para;</a></h3>
+<p>In classical set theory there are some basic operations defined over
+sets. Let <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> be a set and <span><span class="MathJax_Preview">2^U</span><script type="math/tex">2^U</script></span> (also known as power set) be the set of all subsets of U. Since there exists, a 
+bijection between sets and the corresponding characteristic function, one could equivalently say that a power set, <span><span class="MathJax_Preview">2^U</span><script type="math/tex">2^U</script></span>
+is a set defined by a characteristic function <span><span class="MathJax_Preview">\chi_{2^U}: U \rightarrow \{0, 1\}</span><script type="math/tex">\chi_{2^U}: U \rightarrow \{0, 1\}</script></span>.</p>
+<p>The operation of union, intersection and complement are defined in the following ways:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Operation</th>
+<th align="center">Crisp Set</th>
+<th align="center">Characteristic Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Union</strong></td>
+<td align="center"><span><span class="MathJax_Preview">A \cup B = \{x \mid x \in A \ or\  x \in B\}</span><script type="math/tex">A \cup B = \{x \mid x \in A \ or\  x \in B\}</script></span></td>
+<td align="center"><span><span class="MathJax_Preview">\chi_{A \cup B}(x) = max(\chi_A(x), \chi_B(x))</span><script type="math/tex">\chi_{A \cup B}(x) = max(\chi_A(x), \chi_B(x))</script></span></td>
+</tr>
+<tr>
+<td align="left"><strong>Intersection</strong></td>
+<td align="center"><span><span class="MathJax_Preview">A \cap B = \{x \mid x \in A \ and\  x \in B\}</span><script type="math/tex">A \cap B = \{x \mid x \in A \ and\  x \in B\}</script></span></td>
+<td align="center"><span><span class="MathJax_Preview">\chi_{A \cap B}(x) = min(\chi_A(x), \chi_B(x))</span><script type="math/tex">\chi_{A \cap B}(x) = min(\chi_A(x), \chi_B(x))</script></span></td>
+</tr>
+<tr>
+<td align="left"><strong>Compliment</strong></td>
+<td align="center"><span><span class="MathJax_Preview">\bar{A} = \{ x \in U \mid x \notin A \}</span><script type="math/tex">\bar{A} = \{ x \in U \mid x \notin A \}</script></span></td>
+<td align="center"><span><span class="MathJax_Preview">\chi_{\bar{A}}(x) = 1 - \chi_A(x)</span><script type="math/tex">\chi_{\bar{A}}(x) = 1 - \chi_A(x)</script></span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="operations-between-fuzzy-sets">Operations between fuzzy sets<a class="headerlink" href="#operations-between-fuzzy-sets" title="Permanent link">&para;</a></h3>
+<p>While concept of binary membership (<span><span class="MathJax_Preview">\in</span><script type="math/tex">\in</script></span>) does not exist in fuzzy sets, we can draw parallels to the characteristic 
+function for crisp set and apply that to membership functions of fuzzy set analogously to derive set operations.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Operation</th>
+<th align="center">Fuzzy Set Membership Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Union</strong></td>
+<td align="center"><span><span class="MathJax_Preview">\mu_{A \cup B}(x) = max(\mu_A(x), \mu_B(x))</span><script type="math/tex">\mu_{A \cup B}(x) = max(\mu_A(x), \mu_B(x))</script></span></td>
+</tr>
+<tr>
+<td align="left"><strong>Intersection</strong></td>
+<td align="center"><span><span class="MathJax_Preview">\mu_{A \cap B}(x) = min(\mu_A(x), \mu_B(x))</span><script type="math/tex">\mu_{A \cap B}(x) = min(\mu_A(x), \mu_B(x))</script></span></td>
+</tr>
+<tr>
+<td align="left"><strong>Compliment</strong></td>
+<td align="center"><span><span class="MathJax_Preview">\mu_{\bar{A}}(x) = 1 - \mu_A(x)</span><script type="math/tex">\mu_{\bar{A}}(x) = 1 - \mu_A(x)</script></span></td>
+</tr>
+</tbody>
+</table>
+<details class="example" open="open"><summary>Fuzzy Set Operations</summary><p>Let <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> and <span><span class="MathJax_Preview">Bs</span><script type="math/tex">Bs</script></span> be fuzzy subsets of <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> given by membership functions <span><span class="MathJax_Preview">\mu_F</span><script type="math/tex">\mu_F</script></span> and <span><span class="MathJax_Preview">\mu_S</span><script type="math/tex">\mu_S</script></span>: 
+<img alt="" src="../fuzzy_set_op_1.png" /></p><table><thead><tr><th align="center">Union</th><th align="center">Intersection</th><th align="center">Compliment</th></tr></thead><tbody><tr><td align="center"><span><span class="MathJax_Preview">\mu_{A \cup B}(x) = max(\mu_A(x), \mu_B(x))</span><script type="math/tex">\mu_{A \cup B}(x) = max(\mu_A(x), \mu_B(x))</script></span></td><td align="center"><span><span class="MathJax_Preview">\mu_{A \cap B}(x) = min(\mu_A(x), \mu_B(x))</span><script type="math/tex">\mu_{A \cap B}(x) = min(\mu_A(x), \mu_B(x))</script></span></td><td align="center"><span><span class="MathJax_Preview">\mu_{\bar{A}}(x) = 1 - \mu_A(x)</span><script type="math/tex">\mu_{\bar{A}}(x) = 1 - \mu_A(x)</script></span></td></tr><tr><td align="center"><img alt="" src="../fuzzy_set_op_union.png" /></td><td align="center"><img alt="" src="../fuzzy_set_op_intersection.png" /></td><td align="center"><img alt="" src="../fuzzy_set_op_compliment.png" /></td></tr></tbody></table></details><h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://drive.google.com/file/d/1OkCKtQV56OnjrRmAxwuA_59U-ZUr19S1/view">Neural-Symbolic Learning and Reasoning with Constraints
+Tutorial at IEEE IJCNN 2018</a></li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Refer to ZFC Set theory and famous Russel's paradox for more rigorous arguments.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+            <!-- Source files -->
+            
+              
+            
+          
+              
+                
+
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://abhitopia.com/Maths/fuzzy_logic/";
+      this.page.identifier =
+        "/Maths/fuzzy_logic/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//abhitopia-1.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../ML/PaperSummaries/symbolic_dl/" title="Reconciling deep learning with symbolic artificial intelligence" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Reconciling deep learning with symbolic artificial intelligence
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../TensorAlgebra/Chap1/" title="Chapter 1" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Chapter 1
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Abhishek Aggarwal
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/abhitopia" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/abhitopia" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/abhitopia" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
