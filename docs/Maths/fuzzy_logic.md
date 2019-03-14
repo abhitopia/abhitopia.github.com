@@ -67,6 +67,7 @@ $$
 ???+ example "Fuzzy Set"
     Let, as above, U be the set of real numbers between 1 and 10. A description of the fuzzy set of real numbers
     _close to 7_ could be given by the following figure:
+    
     ![](./fuzzy_set.png)
     
 ### Operations between crisp sets
