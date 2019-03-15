@@ -195,7 +195,7 @@ $$
 Semantics of residuum are therefore defines as the maximum truth value to be "added" to $x$ to obtain $y$.
 
 !!! Definition "Definition Residuum"
-    The residuum of the _t-norm_ $\otimes$ is a binary operation $\otimes:[0, 1]^2 \rightarrow [0, 1]$ is defined as
+    The residuum of the _t-norm_ $\otimes$ is a binary operation $\Rightarrow:[0, 1]^2 \rightarrow [0, 1]$ is defined as
     
     $$
     (x \Rightarrow y) = max(\{ z \mid x \otimes z <= y\})
