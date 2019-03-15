@@ -238,13 +238,13 @@ Negation can be defined analogously for fuzzy propositional logic.
     
     ##### Examples
     |Name| Definition|
-    |:--:|:--:|
-    |**Lukasiewicz t-conorm**| $(-)x = 1 - x$|
-    |**G̈odel t-conorm**| $(-)x = \begin{cases}  1 & x = 0 \\ 0 & otherwise \end{cases}$|
-    |**Product t-conotm**|$(-)x = \begin{cases}  1 & x = 0 \\ 0 & otherwise \end{cases}$|
+    |:--:|:--|
+    |**Lukasiewicz precompliment**| $(-)x = 1 - x$|
+    |**G̈odel precompliment**| $(-)x = \begin{cases}  1 & x = 0 \\ 0 & otherwise \end{cases}$|
+    |**Product precompliment**|$(-)x = \begin{cases}  1 & x = 0 \\ 0 & otherwise \end{cases}$|
  
  
-This concluded the post on fuzzy propositional logic. The next step to study fuzzy first order logic or fuzzy predicate logic
+This concludes the post on fuzzy propositional logic. The next step to study fuzzy first order logic or fuzzy predicate logic
 involving quantors, namely _for all_ ($\forall$) and _there exists_ ($\exists$). 
 
 [^1]: Refer to ZFC Set theory and famous Russel's paradox for more rigorous arguments.
