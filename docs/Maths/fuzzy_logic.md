@@ -1,6 +1,6 @@
-Title: Fuzzy First Order Logic 
-description: A short tutorial on fuzzy first order logic (FFOL) 
-hero: Short tutorial on Fuzzy First Order Logic
+Title: Fuzzy Propositional Logic
+description: A short tutorial on fuzzy propositional
+hero: Short tutorial on Fuzzy Propositional Logic
 authors:
     - Abhishek Aggarwal
 date: 2019-03-14
@@ -24,9 +24,8 @@ natural language and several other application domains. It is one of the techniq
 suboptimality and impreciseness (vagueness) and giving quick, simple and sufficiently good solutions.
 
 
-In this blog post, I will summarise Fuzzy logic and more importantly Fuzzy First Order Logic (FFOL). This post is not
-intended to be a rigorous mathematical treatment of the subject but rather a cheat-sheet that can be consulted to 
-revise and reference important concepts.
+In this blog post, I will summarise Fuzzy propositional logic. This post is not intended to be a rigorous mathematical
+ treatment of the subject but rather a cheat-sheet that can be consulted to revise and reference important concepts.
 
 
 ## Crisp and Fuzzy Sets
@@ -95,17 +94,163 @@ function for crisp set and apply that to membership functions of fuzzy set analo
 | **Compliment**    |  $\mu_{\bar{A}}(x) = 1 - \mu_A(x)$ |
 
 ???+ example "Fuzzy Set Operations"
-    Let $A$ and $Bs$ be fuzzy subsets of $U$ given by membership functions $\mu_F$ and $\mu_S$: 
+    Let $A$ and $Bs$ be fuzzy subsets of $U$ given by membership functions $\mu_A$ and $\mu_B$: 
     ![](./fuzzy_set_op_1.png)
     
     | Union | Intersection | Compliment | 
     | :---:| :----: | :---: |
     |$\mu_{A \cup B}(x) = max(\mu_A(x), \mu_B(x))$|  $\mu_{A \cap B}(x) = min(\mu_A(x), \mu_B(x))$ | $\mu_{\bar{A}}(x) = 1 - \mu_A(x)$  |
     |![](./fuzzy_set_op_union.png) | ![](./fuzzy_set_op_intersection.png) | ![](./fuzzy_set_op_compliment.png)
+    
+## Fuzzy propositional logic
+In classical propositional logic, a propositional language consists of _only_ propositions, i.e., statements that can be 
+assigned either True or False. Statements of the form "It is raining.", "Today is Sunday.", "2+2=5" are all examples of 
+valid propositions. "Open the door", "Ecstatic feeling", "Run!", "How many planets are there in solar system?" cannot be 
+assigned simple binary truth values and are thus not propositions.  
+ 
+ 
+It is convenient to define unary and binary operations on propositions. A unary operator takes one proposition to create
+a new proposition. Since there are two truth values, there are exactly four ($2^2$) unary operators, there are
+Identity, Compliment, Tautology and Contradiction.
+
+| $X$  | Identity $(X)$ | Compliment $\bar{X}$ | Tautology $\top(X)$ | Contradiction $\bot(X)$ | 
+| :-:| :------: | :------: | :------: | :------: | 
+| T  | T | F | T | F |
+| F  | F | T | T | F |
+
+A binary operator (often called a connective) takes two proposition to create a new proposition. Consequently, it is possible
+to define 16 ($2^4$) binary connectives. Most prominent of those are Conjunction, Disjunction, Implication, Equivalence,
+and Xor. It is easy to show that all 16 connective equivalent can be obtained by unique application of these 
+binary connectives [^2].
+
+| X | Y | $X \wedge Y$ | $X \lor Y$| $X \Rightarrow Y$ | $X \Leftrightarrow Y$ | $X \oplus Y$ |  
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| T | T | T | T | T | T | F |
+| T | F | F | T | F | F | T |
+| F | T | F | T | T | F | T |
+| F | F | F | F | T | T | F |
+
+
+We can generalize the classical propositional logic to incorporate fuzziness, such that proposition values are in $[0, 1]$
+and that <span style="color:red">_if $x > y$, then $x$ is more true than $y$_</span>.  
+
+### Fuzzy Conjunction: Triangular-norm (T-norm)
+The conjunction connective in fuzzy logic is formalized by a binary operation on truth values, called _t-norm_, which
+satisfy a minimal set of properties to capture the intuitive meaning of conjunction.
+
+
+!!! Definition "Definition T-norm"
+    A _t-norm_ is a binary operation $\otimes:[0, 1]^2 \rightarrow [0, 1]$ satisfying the following conditions:
+    
+    1. **Commutativity:** $x \otimes y = y \otimes x$
+    2. **Associativity:** $x \otimes (y \otimes z) = (y \otimes x) \otimes z$
+    3. **Non-decreasing:** $x \leq y \Rightarrow z \otimes x \leq z \otimes y$
+    4. **Zero and One:** $0 \otimes x = 0$ and $1 \otimes x = x$
+    
+    A t-norm $\otimes$ is continuous if the function $\otimes:[0, 1]^2 \rightarrow [0, 1]$ is a continuous function in the usual sense.
+    
+    ##### Examples
+    |Name| Definition| Visualization|
+    |:--:|:--|:--:|
+    |**Lukasiewicz t-norm**| $x \otimes y = max(0, x + y − 1)$|![](./tnorm-max.png)|
+    |**G̈odel t-norm**| $x \otimes y = min(x, y)$|![](./tnorm-min.png)|
+    |**Product t-norm**| $x \otimes y = x \cdot y$|![](./tnorm-prod.png)|
+    
+### Fuzzy Disjunction: T-Conorm (or S-norm)
+The conjunction connective in fuzzy logic is formalized by a binary operation on truth values, called _t-conorm_, which
+satisfy a minimal set of properties to capture the intuitive meaning of disjunction. The name t-conorm is comes from the
+fact that disjunction is a dual operation to conjunction.
+
+!!! Definition "Definition T-conorm (also called S-norm)"
+    A _t-conorm_ is a binary operation $\oplus:[0, 1]^2 \rightarrow [0, 1]$ satisfying the following conditions:
+    
+    1. **Commutativity:** $x \oplus y = y \oplus x$
+    2. **Associativity:** $x \oplus (y \oplus z) = (y \oplus x) \oplus z$
+    3. **Non-decreasing:** $x \leq y \Rightarrow z \oplus x \leq z \oplus y$
+    4. **Zero and One:** $0 \oplus x = x$ and $1 \oplus x = 1$
+
+    Given a t-norm $\otimes$, a corresponding t-conorm can be derived as 
+    
+    $$
+    x \oplus y = 1 - ( 1 - x ) \otimes ( 1 - y)
+    $$
+        
+    
+    ##### Examples
+    |Name| Definition| Visualization|
+    |:--:|:--|:--:|
+    |**Lukasiewicz t-conorm**| $x \oplus y = min(1, x + y)$|![](./tconorm-min.png)|
+    |**G̈odel t-conorm**| $x \oplus y = max(x, y)$|![](./tconorm-max.png)|
+    |**Product t-conotm**| $x \oplus y = x + y - x \cdot y$|![](./tconorm-prod.png)|
+
+
+### Fuzzy Implication: Residuum
+Intuitively the more $x \Rightarrow y$ is true, the less additional information is carried by $y$ w.r.t., $x$. Thus, for 
+t-norm $\otimes$, following property should hold for residuum $\Rightarrow$ :
+
+$$
+     z \otimes x \quad if \; and \; only \; if \quad z \leq ( x \Rightarrow y) 
+$$ 
+
+Semantics of residuum are therefore defines as the maximum truth value to be "added" to $x$ to obtain $y$.
+
+!!! Definition "Definition Residuum"
+    The residuum of the _t-norm_ $\otimes$ is a binary operation $\otimes:[0, 1]^2 \rightarrow [0, 1]$ is defined as
+    
+    $$
+    (x \Rightarrow y) = max(\{ z \mid x \otimes z <= y\})
+    $$ 
+    
+    Properties of Residua:    
+    
+    1. If $x \leq y$ then $(x \Rightarrow y) = 1$
+    2. $(1 \Rightarrow x) = x$
+    3. $(x \Rightarrow 1) = 1$
+    4. If $x \leq y$ then $x = y \otimes (y \Rightarrow x)$
+        
+    ##### Examples
+    If $x \leq y$, then $(x \Rightarrow y) = 1$, however, when $x > y$, then
+     
+    |Name| Definition| Visualization|
+    |:--:|:--|:--:|
+    |**Lukasiewicz Residuum**| $(x \Rightarrow y) =  1 - x + y$|![](./residuum-max.png)|
+    |**G̈odel Residuum**| $(x \Rightarrow y) = y$|![](./residuum-min.png)|
+    |**Product Residuum**| $(x \Rightarrow y) = y/x$|![](./residuum-prod.png)|
+    
+### Fuzzy Negation: Precompliment
+In classical propositional logic, negation can be thought as implication of contradiction, i.e.,
+ $\bar{X} \Leftrightarrow (X \Rightarrow \bot)$ can shown in table below
+ 
+| $X$ | $\bot$ | $(X \Rightarrow \bot)$ | $\bar{X}$ 
+|:--:|:--:|:--:|:--:|
+|T|F|F|F|
+|F|F|T|T|
+
+Negation can be defined analogously for fuzzy propositional logic.
+
+!!! Definition "Definition Precompliment"
+    For every residual operator $ \Rightarrow $ (and therefore for every t-norm), 
+    the precomplement operator denoted by $(−)$, is defined as:
+    
+    $$
+    (-)x = (x \Rightarrow 0)
+    $$   
+    
+    ##### Examples
+    |Name| Definition|
+    |:--:|:--:|
+    |**Lukasiewicz t-conorm**| $(-)x = 1 - x$|
+    |**G̈odel t-conorm**| $(-)x = \begin{cases}  1 & x = 0 \\ 0 & otherwise \end{cases}$|
+    |**Product t-conotm**|$(-)x = \begin{cases}  1 & x = 0 \\ 0 & otherwise \end{cases}$|
+ 
+ 
+This concluded the post on fuzzy propositional logic. The next step to study fuzzy first order logic or fuzzy predicate logic
+involving quantors, namely _for all_ ($\forall$) and _there exists_ ($\exists$). 
 
 [^1]: Refer to ZFC Set theory and famous Russel's paradox for more rigorous arguments.
-
+[^2]: Infact, it can be shown that only NAND or only NOR operation is complete and all other propositional transformation circuits can be created from NAND or NOR alone.
 
 ## References
 1. [Neural-Symbolic Learning and Reasoning with Constraints
 Tutorial at IEEE IJCNN 2018](https://drive.google.com/file/d/1OkCKtQV56OnjrRmAxwuA_59U-ZUr19S1/view)
+2. [T-norm, Wikipedia](https://en.wikipedia.org/wiki/T-norm)

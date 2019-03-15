@@ -10,7 +10,7 @@ nav:
     - Paper Summaries:
       - Reconciling deep learning with symbolic artificial intelligence: ML/PaperSummaries/symbolic_dl.md
   - Mathamatics:
-    - Fuzzy First Order Logic: Maths/fuzzy_logic.md
+    - Fuzzy Propositional Logic: Maths/fuzzy_logic.md
     - Tensor Algrebra:
       - TensorAlgebra/Chap1.md
 
