@@ -9,14 +9,17 @@ nav:
     - Paper Collection: ML/Concepts/misc.md
     - Paper Summaries:
       - Reconciling deep learning with symbolic artificial intelligence: ML/PaperSummaries/symbolic_dl.md
-  - Tensor Algrebra:
-    - TensorAlgebra/Chap1.md
+  - Mathamatics:
+    - Fuzzy Propositional Logic: Maths/fuzzy_logic.md
+    - Tensor Algrebra:
+      - TensorAlgebra/Chap1.md
+
 # Repository
 #repo_name: 'squidfunk/mkdocs-material'
 #repo_url: 'https://github.com/squidfunk/mkdocs-material'
 
 # Copyright
-copyright: 'Copyright &copy; 2018 Abhishek Aggarwal'
+copyright: 'Copyright &copy; 2019 Abhishek Aggarwal'
 
 # Configuration
 theme:
