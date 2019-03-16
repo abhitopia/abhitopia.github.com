@@ -74,3 +74,11 @@ The post is baed on a nicely written article, link below.
 
 #### My two cents
 - This has not been tried in NLP settings. I am in process of implementing it now as part of my work at True AI. I shall post the results after.
+
+### From Machine Learning to Machine Reasoning
+Old classic and discusses some plausible requirements and neurological evidence for the basis of intelligence.
+- [Paper](https://arxiv.org/pdf/1102.1808.pdf)
+
+### Differentiable Inductive Logic Programming
+- [Paper](https://arxiv.org/pdf/1711.04574.pdf)
+
