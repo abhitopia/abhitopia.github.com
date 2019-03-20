@@ -75,6 +75,9 @@ The post is baed on a nicely written article, link below.
 #### My two cents
 - This has not been tried in NLP settings. I am in process of implementing it now as part of my work at True AI. I shall post the results after.
 
+
+## Symbolic Reasoning, Inductive Logic Programming, Link Predict, Program Synthesis
+
 ### From Machine Learning to Machine Reasoning
 Old classic and discusses some plausible requirements and neurological evidence for the basis of intelligence.
 - [Paper](https://arxiv.org/pdf/1102.1808.pdf)
@@ -82,3 +85,28 @@ Old classic and discusses some plausible requirements and neurological evidence 
 ### Differentiable Inductive Logic Programming
 - [Paper](https://arxiv.org/pdf/1711.04574.pdf)
 
+### Logical Rule Induction and Theory Learning Using Neural Theorem Proving
+- [Paper](https://arxiv.org/pdf/1809.02193v1.pdf)
+
+### Lifted Rule Injection for Relation Embeddings
+- [Paper](https://arxiv.org/abs/1606.08359)
+- [Video](https://vimeo.com/239247564)
+
+### End-to-end differential proving
+- [Video](https://www.artificial-intelligence.video/end-to-end-differentiable-proving-tim-rocktaschel-university-of-oxford)
+-[Paper](https://arxiv.org/pdf/1705.11040.pdf)
+
+### Programming with a Differentiable Forth Interpreter
+- [Paper](https://arxiv.org/abs/1605.06640)
+- [Code](https://github.com/uclmr/d4)
+- [Video](https://vimeo.com/238227890)
+
+### Differentiable Programs with Neural Libraries (Terpret)
+
+- [Paper](https://arxiv.org/abs/1611.02109)
+- [Paper 2](https://arxiv.org/pdf/1608.04428.pdf)
+- [Video](https://vimeo.com/238227833)
+- [Code](https://github.com/51alg/terpret)
+
+### A curate list on code induction and synthesis
+- [link](https://github.com/src-d/awesome-machine-learning-on-source-code)
