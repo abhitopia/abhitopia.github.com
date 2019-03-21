@@ -108,5 +108,22 @@ Old classic and discusses some plausible requirements and neurological evidence 
 - [Video](https://vimeo.com/238227833)
 - [Code](https://github.com/51alg/terpret)
 
+### Differentiable Functional Programming (scala)
+- [Video](https://www.youtube.com/watch?v=igRLKYgpHy0)
+
+
+### Differentiable Functional Program Interpreters
+- [Paper](https://people.csail.mit.edu/feser/2016nfp.pdf)
+
+
 ### A curate list on code induction and synthesis
 - [link](https://github.com/src-d/awesome-machine-learning-on-source-code)
+
+### Adventures in Neuro Symbolic Machine Learning
+- [Slides](https://homepages.inf.ed.ac.uk/csutton/talks/adventures-neurosymbolic-2018/adventures-neurosymbolic.pdf)
+
+
+### Tensor Product Programming Language
+- [Paper](https://scholar.colorado.edu/cgi/viewcontent.cgi?article=1574&context=csci_techreports)
+- [Introduction to Tensor Decompositions and their Applications in Machine Learning](https://arxiv.org/pdf/1711.10781.pdf)
+- [Tensor Decomposition](https://ebiquity.umbc.edu/_file_directory_/papers/833.pdf)
