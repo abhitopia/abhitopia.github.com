@@ -76,5 +76,59 @@ The post is baed on a nicely written article, link below.
 - This has not been tried in NLP settings. I am in process of implementing it now as part of my work at True AI. I shall post the results after.
 
 
+## Symbolic Reasoning, Inductive Logic Programming, Link Predict, Program Synthesis
+
+### From Machine Learning to Machine Reasoning
+Old classic and discusses some plausible requirements and neurological evidence for the basis of intelligence.
+- [Paper](https://arxiv.org/pdf/1102.1808.pdf)
+
+### Differentiable Inductive Logic Programming
+- [Paper](https://arxiv.org/pdf/1711.04574.pdf)
+
+### Logical Rule Induction and Theory Learning Using Neural Theorem Proving
+- [Paper](https://arxiv.org/pdf/1809.02193v1.pdf)
+
+### Lifted Rule Injection for Relation Embeddings
+- [Paper](https://arxiv.org/abs/1606.08359)
+- [Video](https://vimeo.com/239247564)
+
+### End-to-end differential proving
+- [Video](https://www.artificial-intelligence.video/end-to-end-differentiable-proving-tim-rocktaschel-university-of-oxford)
+-[Paper](https://arxiv.org/pdf/1705.11040.pdf)
+
+### Programming with a Differentiable Forth Interpreter
+- [Paper](https://arxiv.org/abs/1605.06640)
+- [Code](https://github.com/uclmr/d4)
+- [Video](https://vimeo.com/238227890)
+
+### Differentiable Programs with Neural Libraries (Terpret)
+
+- [Paper](https://arxiv.org/abs/1611.02109)
+- [Paper 2](https://arxiv.org/pdf/1608.04428.pdf)
+- [Video](https://vimeo.com/238227833)
+- [Code](https://github.com/51alg/terpret)
+
+### Differentiable Functional Programming (scala)
+- [Video](https://www.youtube.com/watch?v=igRLKYgpHy0)
+
+
+### Differentiable Functional Program Interpreters
+- [Paper](https://people.csail.mit.edu/feser/2016nfp.pdf)
+
+
+### A curate list on code induction and synthesis
+- [link](https://github.com/src-d/awesome-machine-learning-on-source-code)
+
+### Adventures in Neuro Symbolic Machine Learning
+- [Slides](https://homepages.inf.ed.ac.uk/csutton/talks/adventures-neurosymbolic-2018/adventures-neurosymbolic.pdf)
+
+
+### Tensor Product Programming Language
+- [Paper](https://scholar.colorado.edu/cgi/viewcontent.cgi?article=1574&context=csci_techreports)
+- [Introduction to Tensor Decompositions and their Applications in Machine Learning](https://arxiv.org/pdf/1711.10781.pdf)
+- [Tensor Decomposition](https://ebiquity.umbc.edu/_file_directory_/papers/833.pdf)
+
+
 ### Weight Decay, BatchNorm and connection with learning rate
 - [Blog](https://blog.janestreet.com/l2-regularization-and-batch-norm/)
+
