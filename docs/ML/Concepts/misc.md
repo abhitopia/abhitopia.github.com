@@ -74,3 +74,7 @@ The post is baed on a nicely written article, link below.
 
 #### My two cents
 - This has not been tried in NLP settings. I am in process of implementing it now as part of my work at True AI. I shall post the results after.
+
+
+### Weight Decay, BatchNorm and connection with learning rate
+- [Blog](https://blog.janestreet.com/l2-regularization-and-batch-norm/)
