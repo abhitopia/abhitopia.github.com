@@ -23,7 +23,8 @@ A short course (WIP) to build solid foundation in Tensor Algebra, which is a pre
 Different Machine learning topics, including an [archive of interesting papers](/ML/Concepts/misc).
 
 ## Contact
-I am always looking for like-minded people and chances are, if you are reading this blog, you are one of them. If you are interested in giving feedback, provide new or discuss existing content, or just want to say hi, you can reach out to me at 
+I am always looking for like-minded people and chances are, if you are reading this blog, you are one of them. If you are interested in giving feedback, provide new or discuss existing content, or just want to say hi, you can reach out to me at
 
 - Email: abhi at abhitopia . com
 - Twitter: [abhitopia](https://twitter.com/abhitopia)
+- **hello** $$x^2$$
