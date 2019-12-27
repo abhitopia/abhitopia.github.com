@@ -10,10 +10,10 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Paper Summary">
+        <meta name="description" content="How do you propagate gradients when using non-continuous functions in your network?">
       
       
-        <link rel="canonical" href="https://abhitopia.com/ML/PaperSummaries/symbolic_dl/">
+        <link rel="canonical" href="https://abhitopia.com/ML/Concepts/stochastic_gradient_estimation/">
       
       
         <meta name="author" content="Abhishek Aggarwal">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Reconciling deep learning with symbolic artificial intelligence</title>
+        <title>An overview of Stochastic Gradient Estimation techniques</title>
       
     
     
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#deep-learning" tabindex="1" class="md-skip">
+      <a href="#stochastic-gradient-estimation" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -142,7 +142,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Reconciling deep learning with symbolic artificial intelligence
+                An overview of Stochastic Gradient Estimation techniques
               
             </span>
           
@@ -189,7 +189,7 @@
 
 <div class="md-hero" data-md-component="hero">
   <div class="md-hero__inner md-grid">
-    Paper Summary (WIP)
+    How do you propagate gradients when using non-continuous functions in your network?
   </div>
 </div>
         
@@ -234,7 +234,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../Concepts/stochastic_gradient_estimation/" class="md-tabs__link md-tabs__link--active">
+        <a href="./" class="md-tabs__link md-tabs__link--active">
           Machine Learning
         </a>
       
@@ -398,11 +398,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../Concepts/stochastic_gradient_estimation/" title="Stochastic Gradient Estimation" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Stochastic Gradient Estimation" class="md-nav__link md-nav__link--active">
       Stochastic Gradient Estimation
     </a>
+    
   </li>
 
         
@@ -412,7 +421,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Concepts/misc/" title="Paper Collection" class="md-nav__link">
+    <a href="../misc/" title="Paper Collection" class="md-nav__link">
       Paper Collection
     </a>
   </li>
@@ -422,12 +431,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
       Paper Summaries
@@ -443,112 +450,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Reconciling deep learning with symbolic artificial intelligence
-      </label>
-    
-    <a href="./" title="Reconciling deep learning with symbolic artificial intelligence" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../PaperSummaries/symbolic_dl/" title="Reconciling deep learning with symbolic artificial intelligence" class="md-nav__link">
       Reconciling deep learning with symbolic artificial intelligence
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#deep-learning" class="md-nav__link">
-    Deep Learning
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#shortcoming-in-deep-learning" class="md-nav__link">
-    Shortcoming in Deep Learning
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#strengths-of-dl" class="md-nav__link">
-    Strengths of DL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#symbolic-ai" class="md-nav__link">
-    Symbolic AI
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#shortcoming-of-symbolic-ai" class="md-nav__link">
-    Shortcoming of Symbolic AI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#strengths-of-symbolic-ai" class="md-nav__link">
-    Strengths of Symbolic AI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#compositionality" class="md-nav__link">
-    Compositionality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relational-representation" class="md-nav__link">
-    Relational Representation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" class="md-nav__link md-nav__link--active">
-            Comments
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -576,89 +482,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#deep-learning" class="md-nav__link">
-    Deep Learning
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#shortcoming-in-deep-learning" class="md-nav__link">
-    Shortcoming in Deep Learning
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#strengths-of-dl" class="md-nav__link">
-    Strengths of DL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#symbolic-ai" class="md-nav__link">
-    Symbolic AI
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#shortcoming-of-symbolic-ai" class="md-nav__link">
-    Shortcoming of Symbolic AI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#strengths-of-symbolic-ai" class="md-nav__link">
-    Strengths of Symbolic AI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#compositionality" class="md-nav__link">
-    Compositionality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relational-representation" class="md-nav__link">
-    Relational Representation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" class="md-nav__link md-nav__link--active">
-            Comments
-          </a>
-        </li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -681,52 +506,52 @@
             -->
 
             
-            <p align="right"><small><br><i>Updated 2019-03-07</i></small></p>
+            <p align="right"><small><br><i>Updated 2019-12-27</i></small></p>
             
 
-            
-              <h1>Reconciling deep learning with symbolic artificial intelligence</h1>
             
 
 
             <!-- 
-            <p style="position:left;font-size:14px;"> Last Updated: 2019-03-06 </p>
+            <p style="position:left;font-size:14px;"> Last Updated: 2019-12-26 </p>
                  -->
 
             <!-- Content -->
-            <p><a href="https://www.sciencedirect.com/science/article/pii/S2352154618301943#bib0255">Link to article</a></p>
-<p>I must admit that I discovered this article trying to build my <strong>original</strong> ideas, and I was pleasantly surprised on how it overlapped 80%-90% on what I had come to conclude even before reading this. It is reassuring that to know that people who are far more qualified, and who have spent way more time than I have on this topic have come to similar conclusion (albeit with more references). Self adulation aside, lets get to business.</p>
-<h3 id="deep-learning">Deep Learning<a class="headerlink" href="#deep-learning" title="Permanent link">&para;</a></h3>
-<h4 id="shortcoming-in-deep-learning">Shortcoming in Deep Learning<a class="headerlink" href="#shortcoming-in-deep-learning" title="Permanent link">&para;</a></h4>
-<p>They categorize (with examples) which are fairly common and intuitive with current Deep Learning method.</p>
+            <h1 id="stochastic-gradient-estimation"><strong>Stochastic Gradient Estimation</strong><a class="headerlink" href="#stochastic-gradient-estimation" title="Permanent link">&para;</a></h1>
+<h1 id="problem-statement">Problem statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h1>
+<p>We are given "well behaved"<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> distribution <span><span class="MathJax_Preview">q_{\phi}(z),\ z \in \mathbb{R},\ \phi \in \mathbb{R}</span><script type="math/tex">q_{\phi}(z),\ z \in \mathbb{R},\ \phi \in \mathbb{R}</script></span>. We are also given cost function <span><span class="MathJax_Preview">f(z) \in \mathbb{R}</span><script type="math/tex">f(z) \in \mathbb{R}</script></span> and a loss function <span><span class="MathJax_Preview">\mathcal{L}(\phi) = \mathbb{E}_{q_{\phi}(z)}[f(z)]</span><script type="math/tex">\mathcal{L}(\phi) = \mathbb{E}_{q_{\phi}(z)}[f(z)]</script></span>. We want to calculate unbiased <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> stochastic estimator for <span><span class="MathJax_Preview">\mathcal{L}'(\phi)</span><script type="math/tex">\mathcal{L}'(\phi)</script></span> </p>
+<div>
+<div class="MathJax_Preview">
+\mathcal{L}'(\phi) = \mathbb{E}_{q_{\phi}(z)}[g(z, \phi)]
+</div>
+<script type="math/tex; mode=display">
+\mathcal{L}'(\phi) = \mathbb{E}_{q_{\phi}(z)}[g(z, \phi)]
+</script>
+</div>
+<p>As such, if we can calculate the gradient <span><span class="MathJax_Preview">g(z, \phi)</span><script type="math/tex">g(z, \phi)</script></span> then we can compute Monte Carlo estimate for practical applications.</p>
+<div>
+<div class="MathJax_Preview">
+\mathcal{L}'(\phi) \approx \frac{1}{M}\sum_{i=1}^M g(z_i, \phi),\ \ z_i \sim q_{\phi}(z)
+</div>
+<script type="math/tex; mode=display">
+\mathcal{L}'(\phi) \approx \frac{1}{M}\sum_{i=1}^M g(z_i, \phi),\ \ z_i \sim q_{\phi}(z)
+</script>
+</div>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=BV465lgleHA">Michael Figurnov (DeepMind) in DeepBayes2018</a></li>
+</ul>
+<div class="footnote">
+<hr />
 <ol>
-<li><strong>Data Inefficiency</strong>: Need no less than a simulator for Deep RL and millions of samples in old-fashioned DL.</li>
-<li><strong>Poor Generalization</strong>: In ability to <em>transfer</em> or <em>reuse</em> learning to a (even slightly) different domain.</li>
-<li><strong>Lack of Interpretability</strong>: Black box phenomenon.</li>
+<li id="fn:1">
+<p>Differentiable density and no inner regions of zero density.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Unbiased just means that if expecation is calculated for infinite samples, then we converge to the true expectation without any offset.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
 </ol>
-<h4 id="strengths-of-dl">Strengths of DL<a class="headerlink" href="#strengths-of-dl" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>Data driven automatic representation (and compute) learning</strong>: Throw in huge amount of data, and a suitable optimizer and wait.</li>
-</ol>
-<h3 id="symbolic-ai">Symbolic AI<a class="headerlink" href="#symbolic-ai" title="Permanent link">&para;</a></h3>
-<p>Most predominant until 1980s, in symbolic AI, representations are typically <em>propositional</em> in character, and assert that certain relations hold between certain objects, while each reasoning step computes a further set of relations that follow from those already established, according to a formally specified set of inference rules. As reminder (and mathematically speaking), a proposition is a statement that evaluates to either True or False. Predicate is a <em>function</em> or mapping that takes variables produce propositional output. A relation is a predicate of two variables.</p>
-<h4 id="shortcoming-of-symbolic-ai">Shortcoming of Symbolic AI<a class="headerlink" href="#shortcoming-of-symbolic-ai" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>Hand crafted representation</strong>: It is not clear how the representations can be learned from data and have traditionally been hand crafted to be used. This is known as <a href="https://www.sciencedirect.com/science/article/pii/0167278990900876"><em>symbol grounding problem</em></a>. The contrast with DL is obvious.</li>
-</ol>
-<h4 id="strengths-of-symbolic-ai">Strengths of Symbolic AI<a class="headerlink" href="#strengths-of-symbolic-ai" title="Permanent link">&para;</a></h4>
-<p>Strengths typically align with shortcomings of DL.</p>
-<ol>
-<li><strong>Data efficiency</strong>: thanks to their declarative nature, symbolic representations lend themselves to re-use in multiple tasks, which promotes data efficiency. There is mostly no training needed, as the rules are often handcrafted.</li>
-<li><strong>Cross-domain generalization</strong>: Symbolic representations tend to be high-level and abstract, which facilitates generalisation. As long as symbols are mapped to correct variables, and problem is correctly formulation in Symbolic AI language.</li>
-<li><strong>Interpretable</strong>: Because of their language-like, propositional character, symbolic representations are amenable to human understanding. The predetermined rules of inference can be examined by humans.</li>
-</ol>
-<p>WIP, more to follow.</p>
-<h4 id="compositionality">Compositionality<a class="headerlink" href="#compositionality" title="Permanent link">&para;</a></h4>
-<p><strong>Show that this can be done using Tensors</strong></p>
-<h4 id="relational-representation">Relational Representation<a class="headerlink" href="#relational-representation" title="Permanent link">&para;</a></h4>
-<p><strong>Can be done using Tensors</strong></p>
-<p>It is easy to show that each layer of feed-forward network is than one function.</p>
+</div>
 
             <!-- Source files -->
             
@@ -741,9 +566,9 @@
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://abhitopia.com/ML/PaperSummaries/symbolic_dl/";
+      this.page.url = "https://abhitopia.com/ML/Concepts/stochastic_gradient_estimation/";
       this.page.identifier =
-        "/ML/PaperSummaries/symbolic_dl/";
+        "/ML/Concepts/stochastic_gradient_estimation/";
     };
     (function() {
       var d = document, s = d.createElement("script");
@@ -793,8 +618,8 @@
 
         <!-- Link to previous page -->
         
-          <a href="../../Concepts/misc/"
-              title="Paper Collection"
+          <a href="../../../Universe/computation_speculation/"
+              title="Computation, Information, Conciousness and Theory of Everything in full circle"
               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
               rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -807,13 +632,32 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Paper Collection
+                Computation, Information, Conciousness and Theory of Everything in full circle
               </span>
             </div>
           </a>
         
 
         <!-- Link to next page -->
+        
+          <a href="../misc/"
+              title="Paper Collection"
+              class="md-flex md-footer-nav__link md-footer-nav__link--next"
+              rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Paper Collection
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward
+                    md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
