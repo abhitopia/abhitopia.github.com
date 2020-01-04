@@ -7,6 +7,7 @@ site_url: 'https://abhitopia.com'
 nav:
   - Mathamatics:
     - Fuzzy Propositional Logic: Maths/fuzzy_logic.md
+    - Variational Calculus: Maths/variational_calculus.md
     - Tensor Algrebra:
       - TensorAlgebra/Chap1.md
   - Universe:
